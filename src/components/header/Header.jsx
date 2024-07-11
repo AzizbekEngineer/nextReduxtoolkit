@@ -1,5 +1,5 @@
 "use client";
-import { increment } from "@/app/lib/features/counter/counterSlice";
+import { decrement, increment } from "@/app/lib/features/counter/counterSlice";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,6 +9,7 @@ const Header = () => {
   return (
     <div>
       <h2>Header {count}</h2>
+      <button onClick={() => dispatch(decrement())}>-</button>
       <button onClick={() => dispatch(increment())}>+</button>
     </div>
   );
